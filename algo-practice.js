@@ -56,3 +56,18 @@ function validAnagram(string1, string2){
           }
       }
   }
+
+
+  // Implement function called countUniqueValues, which accepts a sorted array and counts the unique values in the array. There can be neative numbers in the array, but it will always be sorted.
+
+  function countUniqueValues(array) {
+      if (array.length === 0) return 0; // in case of empty array, want to return 0 not 1
+      let i = 0;
+      for (let j = 1; j < array.length; j++) {
+          if (array[i] !== array[j]) {
+            i++;
+            array[i] = array[j]
+          }
+      } let uniqueNums = i + 1 // grab the index and add 1 for number off unique values
+      return uniqueNums
+  }
