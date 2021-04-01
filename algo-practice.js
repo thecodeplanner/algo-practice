@@ -1,4 +1,5 @@
-// Algo Practice Problems and Solutions 
+// Algo Practice Problems and Solutions!
+
 
 // Given two strings write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
 
@@ -71,3 +72,44 @@ function validAnagram(string1, string2){
       } let uniqueNums = i + 1 // grab the index and add 1 for number off unique values
       return uniqueNums
   }
+
+
+
+
+  // Wtie a function called maxSubarraySum, which accepts an array of integers and a number called n. The function should calculate the maxixmum sum of n consecutive elements in the array. 
+  // below is O (N^2) time complexity as it involves nested loop
+
+  function maxSubarraySum(array, num) {
+      if (num > array.length) {
+          return null;
+      }
+      let max = -Infinity ;
+      for(let i = 0; i < array.length - num+1; i++) {
+          let temp = 0
+          for(let j = 0; j < num; j++) {
+              temp += array[i + j]
+          }
+          if (temp > max) {
+              max = temp;
+          }
+      }
+      return max;
+  }
+
+// Sliding window approach, useful for keeping track of a subset of data in an array/string, etc.
+// more efficient approach as time complexity is O(N)
+
+function maxSubarraySum(array, num) {
+    let maxSum = 0;
+    let tempSum = 0;
+    if (array.length < num) return null;
+    for (let i = 0; i < array.length; i++) {
+        maxSum += array[i]
+    }
+    tempSum = maxSum;
+    for (let i = num; i < array.length; i++) {
+        tempSum = tempSum - array[i - num] + array[i]; // sliding window allows you to subtract from first index and add last index as we move up the array
+        maxSum = Math.max(maxSum, tempSum);
+    }
+    return maxSum;
+}
