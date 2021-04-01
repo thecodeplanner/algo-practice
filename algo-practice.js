@@ -39,3 +39,20 @@ function validAnagram(string1, string2){
           }
       }
   }
+
+  //solution for using two pointers below where time complexity is O(N)
+
+  function sumZero(integerArray) {
+      let left = 0;
+      let right = integerArray.length-1;
+      while (left < right) { // need this so that indices do not overlap and create false positive
+          let sum = integerArray[left] + integerArray[right];
+          if (sum === 0) {
+              return [integerArray[left], integerArray[right]]
+          }else if (sum > 0) {
+              right--
+          }else {
+              left++
+          }
+      }
+  }
