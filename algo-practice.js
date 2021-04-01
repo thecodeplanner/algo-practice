@@ -24,3 +24,18 @@ function validAnagram(string1, string2){
   }
   
   // validAnagram(iceman, cinema)
+
+
+
+  // Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefine if a pair does not exist. 
+
+  // naive solution below -- this is o(n^2) and requires nested loop
+  function sumZero(integerArray) {
+      for (let i = 0; i < integerArray.length; i++) {
+          for (let j = i+1; j < integerArray.length; j++){
+              if (integer[i] + integer[j] === 0) {
+                  return [integer[i], integer[j]]
+              }
+          }
+      }
+  }
