@@ -59,7 +59,33 @@ function validAnagram(string1, string2){
   }
 
 
-  // Implement function called countUniqueValues, which accepts a sorted array and counts the unique values in the array. There can be neative numbers in the array, but it will always be sorted.
+
+  // Multiple Pointers - averagePair
+  // Write a function called averagePair. Given a sorted array of integers and a target average, determine if there is a pair of values in the array where the average pair equals the target average. 
+
+  function averagePair(nums, target){
+    let first = 0;
+    let second = nums.length-1
+    while (first < second) {
+        let average = (nums[first] + nums[second]) / 2
+        if (average === target) { // if equal, return true
+            return true
+        }else if (average < target){ // if average is less, than move first pointer up
+            first++
+        }else { // if average is more than target, move second pointer down
+            second--
+        }
+    }return false
+    
+}
+
+
+
+
+
+
+
+  // Implement function called countUniqueValues, which accepts a sorted array and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted.
 
   function countUniqueValues(array) {
       if (array.length === 0) return 0; // in case of empty array, want to return 0 not 1
@@ -69,7 +95,7 @@ function validAnagram(string1, string2){
             i++;
             array[i] = array[j]
           }
-      } let uniqueNums = i + 1 // grab the index and add 1 for number off unique values
+      } let uniqueNums = i + 1 // grab the index and add 1 for number of unique values
       return uniqueNums
   }
 
