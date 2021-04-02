@@ -129,7 +129,7 @@ function maxSubarraySum(array, num) {
     let maxSum = 0;
     let tempSum = 0;
     if (array.length < num) return null;
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < num; i++) {
         maxSum += array[i]
     }
     tempSum = maxSum;
