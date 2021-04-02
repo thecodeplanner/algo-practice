@@ -176,3 +176,40 @@ function search(array, value) {
     return -1
 }
 
+
+/// Factorial Recusion
+
+function factorial(num) {
+    if (num === 1) return 1
+    return num * factorial(num - 1)
+}
+
+// Non-recursive - iterative --
+
+function factorial(num) {
+    let total = 1
+    for (let i = num; i > 1; i--) {
+        total *= i
+    }
+    return total
+}
+
+
+// isPalindrome Recursive 
+
+function isPalindrome(string){
+    if (string.length === 1) return true
+    if (string[0] === string[string.length-1]) {
+        return isPalindrome(string.slice(1, -1))
+    }
+    return false
+  }
+
+  // isPalindrome Iterative 
+
+  function isPalindrome(string) {
+      for (let i = 0; i < string.length / 2; i++) {
+        if (string[i] !== string[string.length - i - 1]) return false
+      }
+      return true 
+  }
