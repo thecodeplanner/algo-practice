@@ -238,3 +238,14 @@ function capitalizeFirst (array) {
 //     return res;
    
 //   }  
+
+
+// below is what functionOf is doing essentially .. looping through each element one by one to search for element
+
+function linearSearch(array, value) {
+    for (let i = 0; i < array.length; i ++) {
+        if (arrau[i] === value) {
+            return i
+        }
+    }return -1
+}
