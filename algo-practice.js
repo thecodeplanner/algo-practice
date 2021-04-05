@@ -249,3 +249,7 @@ function linearSearch(array, value) {
         }
     }return -1
 }
+
+// Binary Search is faster and can be more efficient 
+// has a divde and conquer approach - instead of going through each element individually, we can compare and decide from a middle point if the element we are looking for is greater or larger
+// this only works with sorted arrays!!!
