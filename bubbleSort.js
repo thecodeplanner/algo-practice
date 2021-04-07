@@ -1,4 +1,7 @@
-// write a funciton that takes in an array and sorts it
+// write a function that takes in an array and sorts it
+// bubble sort compares the first number on the left and goes through each element in the array
+// if element is larger, it swaps until the largest element bubbles up to the right
+// effective if array is already mostly sorted
 
 function bubbleSort(array) {
     const swap = (array, index1, index2) => { // created a function to swap numbers
