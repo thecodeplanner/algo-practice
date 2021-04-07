@@ -10,7 +10,7 @@ function bubbleSort(array) {
     for (let i = array.length; i > 0; i--) { // had i start at end of array, while i is greater than 0, i --
         let noSwaps = true 
         for (let j = 0; j < i - 1; j++) { //this inner loop then will just compare the 2 numbers, but as we increment the index, we don't have to compare the last index anymore as it has been sorted 
-            console.log(array, array[j], array[j+1])
+            // console.log(array, array[j], array[j+1])
             if (array[j] > array[j+1]) {
                 swap(array, j, j+1)
                 noSwaps = false
