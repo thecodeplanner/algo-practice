@@ -7,9 +7,8 @@ function selectionSort(array) {
     }
     for (let i = 0; i < array.length; i++) {
         let lowest = i  // set first index as lowest first
-        for (let j = i+1; j < array.length; j++) {
-            let min = array[j]
-            if (array[j] < array[lowest]) {
+        for (let j = i+1; j < array.length; j++) { // j should be one index ahead of i
+            if (array[j] < array[lowest]) {  // if index ahead is lower than array[i], 
                 lowest = j
             }
         }
