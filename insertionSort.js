@@ -1,3 +1,5 @@
+// insertion sort keeps one portion of the array sorted and places value where it belongs 
+
 function insertionSort(array) {
     for (let i = 1; i < array.length; i++) { // have i start at 1 and 2nd loop will start and compare always 1 minus i
         let currentVal = array[i];
@@ -11,3 +13,6 @@ function insertionSort(array) {
 }
                   
 insertionSort([1,2,9,35,6])
+
+//time complexity is o(n^2) 
+// efficient if array is nearly sorted and need to continuosly sort or add numbers such as data coming in
