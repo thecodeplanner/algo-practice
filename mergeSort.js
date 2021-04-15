@@ -1,3 +1,5 @@
+// create a function that takes in 2 unsorted arrays and returns 1 sorted array 
+
 function mergeSort(arr1, arr2) {
     let sorted = []
     let i = 0;
