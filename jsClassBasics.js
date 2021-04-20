@@ -2,7 +2,7 @@
 
 class Student {
     constructor(firstName, lastName, year) {
-        this.firstName = firstName;
+        this.firstName = firstName; // default properties 
         this.lastName = lastName;
         this.grade = year; // notice that we can name the property whatever we'd like
         this.tardies = 0;
@@ -25,6 +25,9 @@ class Student {
     calculateAverage() {
         let sum = this.scores.reduce(function(a,b) {return a+b})
         return sum/this.scores.length
+    }
+    static enrollStudents() { // adding static will make this a CLASS instance - this can only be called on the student class, not instances
+        return "Enrolling students!!" // ex Student.enrollStudents() // Enrolling studnents!!
     }
 }
 
