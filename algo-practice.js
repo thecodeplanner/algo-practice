@@ -244,7 +244,7 @@ function capitalizeFirst(array) {
 
 function linearSearch(array, value) {
     for (let i = 0; i < array.length; i++) {
-        if (arrau[i] === value) {
+        if (array[i] === value) {
             return i
         }
     } return -1

@@ -26,7 +26,7 @@ class Student {
         let sum = this.scores.reduce(function(a,b) {return a+b})
         return sum/this.scores.length
     }
-    static enrollStudents() { // adding static will make this a CLASS instance - this can only be called on the student class, not instances
+    static enrollStudents() { // adding static will make this a CLASS method - this can only be called on the student class, not instances
         return "Enrolling students!!" // ex Student.enrollStudents() // Enrolling studnents!!
     }
 }
