@@ -81,21 +81,21 @@ class SinglyLinkedList{
     }
     insert(index, val) { //method used to insert a new value at the current index
         let newNode = new Node(val)
-        if (index < 0 || index > this.length) return false 
-        if (index === this.length) {
-            if (this.push(newNode)) return true 
-        }else {
-            return false;
-        }
-        if (index === 0) {
-            if (this.unshift(newNode)) return true
-        }else {
-            return false;
-        }
+        if (index < 0 || index > this.length) return false //add edge case
+        if (index === this.length) return !!this.push(newNode); //if equal, we can use the push method and use double bang operator to return boolean instead of full list 
+        if (index === 0) return !!this.unshift(newNode);
+    
+        let prev = this.get(index - 1); //grab previous index and set to variable
+        let temp = prev.next; //next to then set variable and grab next node from previous before we can insert new node
+        prev.next = newNode; //then set next node and insert new node
+        newNode.next = temp; //now we still have access to previous next node and add that to the new node;
+        this.length++;
+        return true;
+
 
     }
 }
 
-let list = new SinglyLinkedList() //created new instance and set it to list
-list.push('Hello')
-list.push('Goodbye')
+let list = new SinglyLinkedList() //create new instance and set it to list
+// list.push('Hello')
+// list.push('Goodbye')
