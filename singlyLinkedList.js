@@ -49,6 +49,18 @@ class SinglyLinkedList{
         return currentHead //return the node/head that was removed
         
     }
+    unshift(val) { //add node to the beginning of list and make new head
+        let newHead = new Node(val);
+        if(!this.head) {
+            this.head = newHead;
+            this.tail = newHead;
+        }else {
+            newHead.next = this.head // need to have new node point to original head in order to connect list 
+            this.head = newHead; // then assign head to the new head
+            this.length++;
+            return this;
+        }
+    }
 }
 
 let list = new SinglyLinkedList() //created new instance and set it to list
