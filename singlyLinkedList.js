@@ -41,6 +41,14 @@ class SinglyLinkedList{
         }
         return current; //return the last node that was popped off 
     }
+    shift() {
+        if(!this.head) return undefined;
+        let currentHead = this.head; // set head to variable
+        this.head = currentHead.next; // make head to be next node 
+        this.length--; // decrement length by 1
+        return currentHead //return the node/head that was removed
+        
+    }
 }
 
 let list = new SinglyLinkedList() //created new instance and set it to list
