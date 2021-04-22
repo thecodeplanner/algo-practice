@@ -61,6 +61,16 @@ class SinglyLinkedList{
             return this;
         }
     }
+    get(index) {
+        if (index < 0 || index >= this.length) return null //made edge case
+        let counter = 0; // start counter and index at 0
+        let current = this.head; //set variable where current will start at the head
+        while (counter !== index) { // while the counter is not equal to the index, continue to move through the list and increment counter 
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
 }
 
 let list = new SinglyLinkedList() //created new instance and set it to list
