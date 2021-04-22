@@ -101,7 +101,11 @@ class SinglyLinkedList{
         previousNode.next = removed.next;
         this.length--;
         return removed;
-
+    }
+    reverse() {
+        let node = this.head; // start with setting a variable to be the head
+        this.head = this.tail;  //make the head become the tail
+        this.tail = node; // the tail then swaps to node, which is the head
     }
 }
 
