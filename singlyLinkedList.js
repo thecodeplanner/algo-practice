@@ -79,6 +79,21 @@ class SinglyLinkedList{
         }
         return false;
     }
+    insert(index, val) { //method used to insert a new value at the current index
+        let newNode = new Node(val)
+        if (index < 0 || index > this.length) return false 
+        if (index === this.length) {
+            if (this.push(newNode)) return true 
+        }else {
+            return false;
+        }
+        if (index === 0) {
+            if (this.unshift(newNode)) return true
+        }else {
+            return false;
+        }
+
+    }
 }
 
 let list = new SinglyLinkedList() //created new instance and set it to list
