@@ -91,7 +91,16 @@ class SinglyLinkedList{
         newNode.next = temp; //now we still have access to previous next node and add that to the new node;
         this.length++;
         return true;
-
+    }
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === this.length-1) return this.pop()
+        if (index === 0) return this.shift()
+        let previousNode = this.get(index - 1);
+        let removed = previousNode.next;
+        previousNode.next = removed.next;
+        this.length--;
+        return removed;
 
     }
 }
