@@ -61,7 +61,7 @@ class SinglyLinkedList{
             return this;
         }
     }
-    get(index) {
+    get(index) { //method to retrive index in list
         if (index < 0 || index >= this.length) return null //made edge case
         let counter = 0; // start counter and index at 0
         let current = this.head; //set variable where current will start at the head
@@ -70,6 +70,14 @@ class SinglyLinkedList{
             counter++;
         }
         return current;
+    }
+    set(index, val) { //method used to set index in a list to a new val passed in
+        let foundNode = this.get(index) // we can use the get method we just wrote above 
+        if(foundNode) { //if true, then we set that value to the new value passed in
+            foundNode.val = val;
+            return true;
+        }
+        return false;
     }
 }
 
