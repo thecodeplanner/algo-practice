@@ -106,6 +106,15 @@ class SinglyLinkedList{
         let node = this.head; // start with setting a variable to be the head
         this.head = this.tail;  //make the head become the tail
         this.tail = node; // the tail then swaps to node, which is the head
+        let next;
+        let prev = null //prev starts out as null
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev; // the node after is actually set to previous, so this is when we build the list backwards
+            prev = node; // then we shift the variables down the list and start over 
+            node = next;
+        }
+        return this; // return reversed list 
     }
 }
 
