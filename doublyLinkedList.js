@@ -1,4 +1,5 @@
 // creating a doubly linked list 
+// very similar to singly linked list, except direction can go in two diff ways 
 
 class Node {
     constructor(val) {
