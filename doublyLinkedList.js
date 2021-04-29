@@ -5,7 +5,7 @@ class Node {
     constructor(val) {
         this.val = val;
         this.next = null;
-        this.prev = null;
+        this.prev = null; // for doubly linked list, we add previous node to show opposite direction
     }
 }
 
@@ -27,6 +27,19 @@ class DoublyLinkedList {
         }
         this.length++ // increment length of list
         return this
-
+    }
+    pop() {
+        if (!head) return undefined; 
+        let poppedNode = this.tail;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        }else {
+            this.tail = poppedNode.prev;
+            this.tail.next = null;
+            poppedNode.prev = null; // need to sever ties here as well so there are no lingering nodes
+        }
+        this.length--;
+        return poppedNode;
     }
 }
