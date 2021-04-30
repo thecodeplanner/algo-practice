@@ -29,7 +29,7 @@ class DoublyLinkedList {
         return this
     }
     pop() {
-        if (!head) return undefined; 
+        if (!this.head) return undefined; 
         let poppedNode = this.tail;
         if (this.length === 1) {
             this.head = null;
@@ -42,4 +42,19 @@ class DoublyLinkedList {
         this.length--;
         return poppedNode;
     }
+    shift() { // remove node from beginning of list
+        if (this.length === 0) return undefined; // start with edge case
+        let removedHead = this.head; //set old head to variable so we can return at the end 
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        }else {
+            this.head = removedHead.next; // set new head to be .next of original 
+            this.head.prev = null // make sure .prev is set to null to sever ties
+            removedHead.next = null; // same with .next to end the list
+        }
+        this.length--;
+        return removedHead;
+    }  
+
 }
